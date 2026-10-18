@@ -1,0 +1,19 @@
+[project]
+name = "sketchrag"
+version = "0.1.0"
+description = "SketchRAG: approximate streaming summaries as retrieval context for agentic AI"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy", "torch", "transformers", "faiss-cpu", "rank_bm25", "matplotlib",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

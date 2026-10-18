@@ -1,0 +1,92 @@
+[
+ {
+  "chunks": 6512,
+  "words": 840659,
+  "sketch_hot_bytes": 1041980,
+  "sketch_cells": 64,
+  "dense_bytes": 15327050,
+  "text_bytes": 5324618,
+  "ingest_ms_per_chunk": 2.2714852893036985
+ },
+ {
+  "chunks": 13025,
+  "words": 1682617,
+  "sketch_hot_bytes": 1045354,
+  "sketch_cells": 64,
+  "dense_bytes": 30654228,
+  "text_bytes": 10647828,
+  "ingest_ms_per_chunk": 2.3084605299070433
+ },
+ {
+  "chunks": 19538,
+  "words": 2532679,
+  "sketch_hot_bytes": 1051940,
+  "sketch_cells": 64,
+  "dense_bytes": 45904504,
+  "text_bytes": 15894136,
+  "ingest_ms_per_chunk": 2.2856962227994533
+ },
+ {
+  "chunks": 26050,
+  "words": 3382404,
+  "sketch_hot_bytes": 1054882,
+  "sketch_cells": 64,
+  "dense_bytes": 61221532,
+  "text_bytes": 21208732,
+  "ingest_ms_per_chunk": 2.28945755090291
+ },
+ {
+  "chunks": 32563,
+  "words": 4234744,
+  "sketch_hot_bytes": 1055983,
+  "sketch_cells": 64,
+  "dense_bytes": 76529510,
+  "text_bytes": 26512742,
+  "ingest_ms_per_chunk": 2.3055491570889943
+ },
+ {
+  "chunks": 39076,
+  "words": 5084452,
+  "sketch_hot_bytes": 1055614,
+  "sketch_cells": 64,
+  "dense_bytes": 91813655,
+  "text_bytes": 31792919,
+  "ingest_ms_per_chunk": 2.313222300247984
+ },
+ {
+  "chunks": 45588,
+  "words": 5931383,
+  "sketch_hot_bytes": 1057503,
+  "sketch_cells": 64,
+  "dense_bytes": 107102289,
+  "text_bytes": 37079121,
+  "ingest_ms_per_chunk": 2.3202626635246224
+ },
+ {
+  "chunks": 52101,
+  "words": 6787000,
+  "sketch_hot_bytes": 1056532,
+  "sketch_cells": 64,
+  "dense_bytes": 122387540,
+  "text_bytes": 42360404,
+  "ingest_ms_per_chunk": 2.3298823363494545
+ },
+ {
+  "chunks": 58614,
+  "words": 7638443,
+  "sketch_hot_bytes": 1058443,
+  "sketch_cells": 64,
+  "dense_bytes": 137668444,
+  "text_bytes": 47637340,
+  "ingest_ms_per_chunk": 2.332884930357358
+ },
+ {
+  "chunks": 65127,
+  "words": 8488204,
+  "sketch_hot_bytes": 1056511,
+  "sketch_cells": 64,
+  "dense_bytes": 152975229,
+  "text_bytes": 52940157,
+  "ingest_ms_per_chunk": 2.3307872896244803
+ }
+]

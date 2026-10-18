@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Ablations of SketchRAG-gate (110 questions, 11 tasks $\times$ 10). $\Delta$ is relative to the frozen configuration.}
+\label{tab:ablate}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Variant & Score & $\Delta$ & Fb \\
+\midrule
+Frozen configuration & 42.4 & -- & 0.51 \\
+16-pointer reservoir per cell & 28.9 & -13.5 & 0.51 \\
+Noise-floor confidence & 42.7 & +0.3 & 0.61 \\
+No temporal neighbour & 40.7 & -1.7 & 0.48 \\
+No co-occurrence check & 42.5 & +0.1 & 0.49 \\
+Raw added, digest kept & 41.5 & -0.9 & 0.51 \\
+CMS evidence in ranking ($w_{lex}{=}0.5$) & 41.7 & -0.7 & 0.54 \\
+\bottomrule
+\end{tabular}
+\end{table}

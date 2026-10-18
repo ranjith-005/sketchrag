@@ -1,0 +1,19 @@
+{
+ "run": "smoke2",
+ "systems": [
+  "sketchrag_gate",
+  "sketchrag_hybrid",
+  "amber_lite",
+  "full_context"
+ ],
+ "tasks": [
+  "hotpotqa"
+ ],
+ "n": 1,
+ "seed": 0,
+ "model": "llama3.2:3b",
+ "num_ctx": 8192,
+ "set": [],
+ "chunk_words": 150,
+ "workers": 1
+}

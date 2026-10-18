@@ -1,0 +1,92 @@
+[
+ {
+  "chunks": 6512,
+  "words": 840659,
+  "sketch_hot_bytes": 2297032,
+  "sketch_cells": 256,
+  "dense_bytes": 15327050,
+  "text_bytes": 5324618,
+  "ingest_ms_per_chunk": 3.253430006631947
+ },
+ {
+  "chunks": 13025,
+  "words": 1682617,
+  "sketch_hot_bytes": 2300852,
+  "sketch_cells": 256,
+  "dense_bytes": 30654228,
+  "text_bytes": 10647828,
+  "ingest_ms_per_chunk": 4.54330866071333
+ },
+ {
+  "chunks": 19538,
+  "words": 2532679,
+  "sketch_hot_bytes": 2308231,
+  "sketch_cells": 256,
+  "dense_bytes": 45904504,
+  "text_bytes": 15894136,
+  "ingest_ms_per_chunk": 5.041572576686423
+ },
+ {
+  "chunks": 26050,
+  "words": 3382404,
+  "sketch_hot_bytes": 2310932,
+  "sketch_cells": 256,
+  "dense_bytes": 61221532,
+  "text_bytes": 21208732,
+  "ingest_ms_per_chunk": 5.251110407066641
+ },
+ {
+  "chunks": 32563,
+  "words": 4234744,
+  "sketch_hot_bytes": 2314180,
+  "sketch_cells": 256,
+  "dense_bytes": 76529510,
+  "text_bytes": 26512742,
+  "ingest_ms_per_chunk": 5.626065307418365
+ },
+ {
+  "chunks": 39076,
+  "words": 5084452,
+  "sketch_hot_bytes": 2314769,
+  "sketch_cells": 256,
+  "dense_bytes": 91813655,
+  "text_bytes": 31792919,
+  "ingest_ms_per_chunk": 5.977182941015498
+ },
+ {
+  "chunks": 45588,
+  "words": 5931383,
+  "sketch_hot_bytes": 2318351,
+  "sketch_cells": 256,
+  "dense_bytes": 107102289,
+  "text_bytes": 37079121,
+  "ingest_ms_per_chunk": 5.964426305172043
+ },
+ {
+  "chunks": 52101,
+  "words": 6787000,
+  "sketch_hot_bytes": 2318127,
+  "sketch_cells": 256,
+  "dense_bytes": 122387540,
+  "text_bytes": 42360404,
+  "ingest_ms_per_chunk": 5.973465614807089
+ },
+ {
+  "chunks": 58614,
+  "words": 7638443,
+  "sketch_hot_bytes": 2320341,
+  "sketch_cells": 256,
+  "dense_bytes": 137668444,
+  "text_bytes": 47637340,
+  "ingest_ms_per_chunk": 5.959761635451899
+ },
+ {
+  "chunks": 65127,
+  "words": 8488204,
+  "sketch_hot_bytes": 2319802,
+  "sketch_cells": 256,
+  "dense_bytes": 152975229,
+  "text_bytes": 52940157,
+  "ingest_ms_per_chunk": 5.9411303499663175
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "id": "rranjithkumariiitk/sketchrag-emllm-repro",
+  "title": "sketchrag-emllm-repro",
+  "code_file": "run_emllm.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": ["rranjithkumariiitk/sketchrag-emllm-subset"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

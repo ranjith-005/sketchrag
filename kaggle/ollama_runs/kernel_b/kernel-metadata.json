@@ -1,0 +1,15 @@
+{
+  "id": "rranjithkumariiitk/sketchrag-ollama-sweeps",
+  "title": "sketchrag-ollama-sweeps",
+  "code_file": "run_jobs.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "rranjithkumariiitk/sketchrag-bundle"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -1,0 +1,627 @@
+{
+ "systems": [
+  {
+   "key": "bm25_rag",
+   "label": "BM25 RAG",
+   "score": 46.0,
+   "tokens": 1327,
+   "llm_s": 8.1,
+   "fallback": 0.0,
+   "calls": 1.0
+  },
+  {
+   "key": "sketchrag_raw",
+   "label": "SketchRAG always raw",
+   "score": 42.5,
+   "tokens": 1549,
+   "llm_s": 7.6,
+   "fallback": 1.0,
+   "calls": 1.0
+  },
+  {
+   "key": "sketchrag_gate",
+   "label": "SketchRAG + gate",
+   "score": 41.7,
+   "tokens": 1213,
+   "llm_s": 5.8,
+   "fallback": 0.54,
+   "calls": 1.0
+  },
+  {
+   "key": "sketchrag_hybrid",
+   "label": "SketchRAG gate + agent",
+   "score": 38.3,
+   "tokens": 1553,
+   "llm_s": 6.3,
+   "fallback": 0.55,
+   "calls": 1.02
+  },
+  {
+   "key": "sara_lite",
+   "label": "SARA-lite",
+   "score": 38.2,
+   "tokens": 2435,
+   "llm_s": 12.9,
+   "fallback": 0.0,
+   "calls": 1.0
+  },
+  {
+   "key": "full_context",
+   "label": "Full context",
+   "score": 38.1,
+   "tokens": 14232,
+   "llm_s": 61.5,
+   "fallback": 0.0,
+   "calls": 1.0
+  },
+  {
+   "key": "dense_rag",
+   "label": "Dense RAG",
+   "score": 35.8,
+   "tokens": 1361,
+   "llm_s": 6.9,
+   "fallback": 0.0,
+   "calls": 1.0
+  },
+  {
+   "key": "amber_lite",
+   "label": "AMBER-lite",
+   "score": 32.0,
+   "tokens": 2223,
+   "llm_s": 31.8,
+   "fallback": 0.0,
+   "calls": 2.97
+  },
+  {
+   "key": "sketchrag_agent",
+   "label": "SketchRAG LLM agent",
+   "score": 30.1,
+   "tokens": 2727,
+   "llm_s": 9.4,
+   "fallback": 0.06,
+   "calls": 1.16
+  },
+  {
+   "key": "sketchrag_sketch",
+   "label": "SketchRAG digest only",
+   "score": 29.9,
+   "tokens": 1284,
+   "llm_s": 6.1,
+   "fallback": 0.0,
+   "calls": 1.0
+  }
+ ],
+ "calibration": {
+  "n": 350,
+  "fired": 190,
+  "trusted": 160,
+  "fired_sketch": 30.0,
+  "fired_gate": 51.5,
+  "trusted_gate": 31.4,
+  "trusted_raw": 32.2,
+  "agent_tool_calls": 30
+ },
+ "per_task": {
+  "amber_lite": {
+   "narrativeqa": 11.1,
+   "qasper": 42.6,
+   "multifieldqa_en": 53.3,
+   "hotpotqa": 44.8,
+   "2wikimqa": 43.1,
+   "musique": 32.9,
+   "gov_report": 9.9,
+   "qmsum": 18.9,
+   "passage_retrieval_en": 0.0,
+   "passkey": 100.0,
+   "kv_retrieval": 10.0,
+   "longbook_qa_eng": 18.0
+  },
+  "bm25_rag": {
+   "narrativeqa": 18.7,
+   "qasper": 45.8,
+   "multifieldqa_en": 47.5,
+   "hotpotqa": 51.4,
+   "2wikimqa": 38.0,
+   "musique": 17.6,
+   "gov_report": 11.7,
+   "qmsum": 20.6,
+   "passage_retrieval_en": 70.0,
+   "passkey": 100.0,
+   "kv_retrieval": 96.7,
+   "longbook_qa_eng": 34.3
+  },
+  "dense_rag": {
+   "narrativeqa": 14.7,
+   "qasper": 38.8,
+   "multifieldqa_en": 51.4,
+   "hotpotqa": 47.2,
+   "2wikimqa": 38.3,
+   "musique": 27.4,
+   "gov_report": 11.7,
+   "qmsum": 20.0,
+   "passage_retrieval_en": 50.0,
+   "passkey": 100.0,
+   "kv_retrieval": 6.7,
+   "longbook_qa_eng": 23.5
+  },
+  "full_context": {
+   "narrativeqa": 26.8,
+   "qasper": 51.4,
+   "multifieldqa_en": 51.7,
+   "hotpotqa": 65.6,
+   "2wikimqa": 58.7,
+   "musique": 24.2,
+   "gov_report": 15.9,
+   "qmsum": 19.4,
+   "passage_retrieval_en": 93.3,
+   "passkey": 16.7,
+   "kv_retrieval": 10.0,
+   "longbook_qa_eng": 23.0
+  },
+  "sara_lite": {
+   "narrativeqa": 17.2,
+   "qasper": 53.5,
+   "multifieldqa_en": 55.0,
+   "hotpotqa": 61.4,
+   "2wikimqa": 51.9,
+   "musique": 33.5,
+   "gov_report": 12.0,
+   "qmsum": 18.8,
+   "passage_retrieval_en": 16.7,
+   "passkey": 100.0,
+   "kv_retrieval": 16.7,
+   "longbook_qa_eng": 22.0
+  },
+  "sketchrag_agent": {
+   "narrativeqa": 8.9,
+   "qasper": 20.5,
+   "multifieldqa_en": 36.0,
+   "hotpotqa": 32.8,
+   "2wikimqa": 20.6,
+   "musique": 12.3,
+   "gov_report": 12.3,
+   "qmsum": 18.1,
+   "passage_retrieval_en": 30.0,
+   "passkey": 100.0,
+   "kv_retrieval": 60.0,
+   "longbook_qa_eng": 10.0
+  },
+  "sketchrag_gate": {
+   "narrativeqa": 15.0,
+   "qasper": 36.2,
+   "multifieldqa_en": 44.0,
+   "hotpotqa": 50.2,
+   "2wikimqa": 33.3,
+   "musique": 21.9,
+   "gov_report": 11.7,
+   "qmsum": 18.9,
+   "passage_retrieval_en": 53.3,
+   "passkey": 100.0,
+   "kv_retrieval": 96.7,
+   "longbook_qa_eng": 19.0
+  },
+  "sketchrag_hybrid": {
+   "narrativeqa": 14.3,
+   "qasper": 33.1,
+   "multifieldqa_en": 41.8,
+   "hotpotqa": 47.5,
+   "2wikimqa": 22.6,
+   "musique": 17.9,
+   "gov_report": 12.4,
+   "qmsum": 18.7,
+   "passage_retrieval_en": 40.0,
+   "passkey": 100.0,
+   "kv_retrieval": 93.3,
+   "longbook_qa_eng": 17.6
+  },
+  "sketchrag_raw": {
+   "narrativeqa": 20.3,
+   "qasper": 38.6,
+   "multifieldqa_en": 50.7,
+   "hotpotqa": 52.8,
+   "2wikimqa": 28.5,
+   "musique": 18.8,
+   "gov_report": 13.2,
+   "qmsum": 19.4,
+   "passage_retrieval_en": 53.3,
+   "passkey": 100.0,
+   "kv_retrieval": 96.7,
+   "longbook_qa_eng": 17.5
+  },
+  "sketchrag_sketch": {
+   "narrativeqa": 13.2,
+   "qasper": 24.1,
+   "multifieldqa_en": 36.5,
+   "hotpotqa": 39.9,
+   "2wikimqa": 28.3,
+   "musique": 18.6,
+   "gov_report": 11.8,
+   "qmsum": 17.5,
+   "passage_retrieval_en": 46.7,
+   "passkey": 100.0,
+   "kv_retrieval": 6.7,
+   "longbook_qa_eng": 16.0
+  }
+ },
+ "ablations": [
+  {
+   "label": "Frozen configuration",
+   "score": 42.4,
+   "fallback": 0.51
+  },
+  {
+   "label": "16-pointer reservoir per cell",
+   "score": 28.9,
+   "fallback": 0.51
+  },
+  {
+   "label": "Noise-floor confidence",
+   "score": 42.7,
+   "fallback": 0.61
+  },
+  {
+   "label": "No temporal neighbour",
+   "score": 40.7,
+   "fallback": 0.48
+  },
+  {
+   "label": "No co-occurrence check",
+   "score": 42.5,
+   "fallback": 0.49
+  },
+  {
+   "label": "Raw added, digest kept",
+   "score": 41.5,
+   "fallback": 0.51
+  },
+  {
+   "label": "CMS evidence in ranking",
+   "score": 41.7,
+   "fallback": 0.54
+  }
+ ],
+ "sweep_cells": {
+  "SketchRAG + gate": [
+   {
+    "max_cells": 8,
+    "score": 43.2,
+    "fallback": 0.77,
+    "hot_kb": 178
+   },
+   {
+    "max_cells": 16,
+    "score": 40.8,
+    "fallback": 0.71,
+    "hot_kb": 232
+   },
+   {
+    "max_cells": 32,
+    "score": 45.5,
+    "fallback": 0.65,
+    "hot_kb": 309
+   },
+   {
+    "max_cells": 64,
+    "score": 42.4,
+    "fallback": 0.51,
+    "hot_kb": 416
+   },
+   {
+    "max_cells": 128,
+    "score": 40.5,
+    "fallback": 0.46,
+    "hot_kb": 485
+   },
+   {
+    "max_cells": 256,
+    "score": 40.3,
+    "fallback": 0.45,
+    "hot_kb": 507
+   }
+  ],
+  "SketchRAG digest only": [
+   {
+    "max_cells": 8,
+    "score": 28.5,
+    "fallback": 0.0,
+    "hot_kb": 178
+   },
+   {
+    "max_cells": 16,
+    "score": 30.4,
+    "fallback": 0.0,
+    "hot_kb": 232
+   },
+   {
+    "max_cells": 32,
+    "score": 32.3,
+    "fallback": 0.0,
+    "hot_kb": 309
+   },
+   {
+    "max_cells": 64,
+    "score": 31.0,
+    "fallback": 0.0,
+    "hot_kb": 416
+   },
+   {
+    "max_cells": 128,
+    "score": 30.3,
+    "fallback": 0.0,
+    "hot_kb": 485
+   },
+   {
+    "max_cells": 256,
+    "score": 29.5,
+    "fallback": 0.0,
+    "hot_kb": 507
+   }
+  ]
+ },
+ "sweep_cms": {
+  "SketchRAG + gate": [
+   {
+    "cms_width": 64,
+    "score": 42.7,
+    "fallback": 0.75,
+    "hot_kb": 239
+   },
+   {
+    "cms_width": 128,
+    "score": 40.0,
+    "fallback": 0.62,
+    "hot_kb": 264
+   },
+   {
+    "cms_width": 512,
+    "score": 43.3,
+    "fallback": 0.51,
+    "hot_kb": 416
+   },
+   {
+    "cms_width": 2048,
+    "score": 42.7,
+    "fallback": 0.52,
+    "hot_kb": 1023
+   }
+  ]
+ },
+ "stress": {
+  "curve_64": [
+   {
+    "chunks": 6512,
+    "words": 840659,
+    "sketch_hot_bytes": 1041980,
+    "sketch_cells": 64,
+    "dense_bytes": 15327050,
+    "text_bytes": 5324618,
+    "ingest_ms_per_chunk": 2.2714852893036985
+   },
+   {
+    "chunks": 13025,
+    "words": 1682617,
+    "sketch_hot_bytes": 1045354,
+    "sketch_cells": 64,
+    "dense_bytes": 30654228,
+    "text_bytes": 10647828,
+    "ingest_ms_per_chunk": 2.3084605299070433
+   },
+   {
+    "chunks": 19538,
+    "words": 2532679,
+    "sketch_hot_bytes": 1051940,
+    "sketch_cells": 64,
+    "dense_bytes": 45904504,
+    "text_bytes": 15894136,
+    "ingest_ms_per_chunk": 2.2856962227994533
+   },
+   {
+    "chunks": 26050,
+    "words": 3382404,
+    "sketch_hot_bytes": 1054882,
+    "sketch_cells": 64,
+    "dense_bytes": 61221532,
+    "text_bytes": 21208732,
+    "ingest_ms_per_chunk": 2.28945755090291
+   },
+   {
+    "chunks": 32563,
+    "words": 4234744,
+    "sketch_hot_bytes": 1055983,
+    "sketch_cells": 64,
+    "dense_bytes": 76529510,
+    "text_bytes": 26512742,
+    "ingest_ms_per_chunk": 2.3055491570889943
+   },
+   {
+    "chunks": 39076,
+    "words": 5084452,
+    "sketch_hot_bytes": 1055614,
+    "sketch_cells": 64,
+    "dense_bytes": 91813655,
+    "text_bytes": 31792919,
+    "ingest_ms_per_chunk": 2.313222300247984
+   },
+   {
+    "chunks": 45588,
+    "words": 5931383,
+    "sketch_hot_bytes": 1057503,
+    "sketch_cells": 64,
+    "dense_bytes": 107102289,
+    "text_bytes": 37079121,
+    "ingest_ms_per_chunk": 2.3202626635246224
+   },
+   {
+    "chunks": 52101,
+    "words": 6787000,
+    "sketch_hot_bytes": 1056532,
+    "sketch_cells": 64,
+    "dense_bytes": 122387540,
+    "text_bytes": 42360404,
+    "ingest_ms_per_chunk": 2.3298823363494545
+   },
+   {
+    "chunks": 58614,
+    "words": 7638443,
+    "sketch_hot_bytes": 1058443,
+    "sketch_cells": 64,
+    "dense_bytes": 137668444,
+    "text_bytes": 47637340,
+    "ingest_ms_per_chunk": 2.332884930357358
+   },
+   {
+    "chunks": 65127,
+    "words": 8488204,
+    "sketch_hot_bytes": 1056511,
+    "sketch_cells": 64,
+    "dense_bytes": 152975229,
+    "text_bytes": 52940157,
+    "ingest_ms_per_chunk": 2.3307872896244803
+   }
+  ],
+  "curve_256": [
+   {
+    "chunks": 6512,
+    "words": 840659,
+    "sketch_hot_bytes": 3770056,
+    "sketch_cells": 256,
+    "dense_bytes": 15327050,
+    "text_bytes": 5324618,
+    "ingest_ms_per_chunk": 3.269872957241967
+   },
+   {
+    "chunks": 13025,
+    "words": 1682617,
+    "sketch_hot_bytes": 3839156,
+    "sketch_cells": 256,
+    "dense_bytes": 30654228,
+    "text_bytes": 10647828,
+    "ingest_ms_per_chunk": 3.50864753131567
+   },
+   {
+    "chunks": 19538,
+    "words": 2532679,
+    "sketch_hot_bytes": 3858055,
+    "sketch_cells": 256,
+    "dense_bytes": 45904504,
+    "text_bytes": 15894136,
+    "ingest_ms_per_chunk": 3.6223748537411447
+   },
+   {
+    "chunks": 26050,
+    "words": 3382404,
+    "sketch_hot_bytes": 3869972,
+    "sketch_cells": 256,
+    "dense_bytes": 61221532,
+    "text_bytes": 21208732,
+    "ingest_ms_per_chunk": 3.9565231781940007
+   },
+   {
+    "chunks": 32563,
+    "words": 4234744,
+    "sketch_hot_bytes": 3876292,
+    "sketch_cells": 256,
+    "dense_bytes": 76529510,
+    "text_bytes": 26512742,
+    "ingest_ms_per_chunk": 4.33542095908665
+   },
+   {
+    "chunks": 39076,
+    "words": 5084452,
+    "sketch_hot_bytes": 3879953,
+    "sketch_cells": 256,
+    "dense_bytes": 91813655,
+    "text_bytes": 31792919,
+    "ingest_ms_per_chunk": 4.361417514327519
+   },
+   {
+    "chunks": 45588,
+    "words": 5931383,
+    "sketch_hot_bytes": 3883535,
+    "sketch_cells": 256,
+    "dense_bytes": 107102289,
+    "text_bytes": 37079121,
+    "ingest_ms_per_chunk": 4.372169450048508
+   },
+   {
+    "chunks": 52101,
+    "words": 6787000,
+    "sketch_hot_bytes": 3884847,
+    "sketch_cells": 256,
+    "dense_bytes": 122387540,
+    "text_bytes": 42360404,
+    "ingest_ms_per_chunk": 4.393206938235704
+   },
+   {
+    "chunks": 58614,
+    "words": 7638443,
+    "sketch_hot_bytes": 3889365,
+    "sketch_cells": 256,
+    "dense_bytes": 137668444,
+    "text_bytes": 47637340,
+    "ingest_ms_per_chunk": 4.441372794680692
+   },
+   {
+    "chunks": 65127,
+    "words": 8488204,
+    "sketch_hot_bytes": 3888826,
+    "sketch_cells": 256,
+    "dense_bytes": 152975229,
+    "text_bytes": 52940157,
+    "ingest_ms_per_chunk": 4.469711601737544
+   }
+  ],
+  "recall": {
+   "dense_rag": 0.44,
+   "bm25_rag": 0.38,
+   "sketchrag_sketch": 0.12,
+   "sketchrag_gate": 0.23,
+   "sketchrag_raw": 0.24
+  },
+  "n_words": 8488204,
+  "n_chunks": 65127,
+  "gate_fallback_rate": 1.0
+ },
+ "emllm": {
+  "tasks": [
+   "2wikimqa",
+   "hotpotqa",
+   "multifieldqa_en",
+   "musique",
+   "passage_retrieval_en",
+   "qasper"
+  ],
+  "questions": 120,
+  "systems": [
+   {
+    "label": "Full context",
+    "avg": 37.7
+   },
+   {
+    "label": "SketchRAG always raw",
+    "avg": 36.2
+   },
+   {
+    "label": "SketchRAG + gate",
+    "avg": 34.8
+   },
+   {
+    "label": "BM25 RAG",
+    "avg": 34.6
+   },
+   {
+    "label": "EM-LLM (official)",
+    "avg": 34.5
+   },
+   {
+    "label": "Dense RAG",
+    "avg": 34.0
+   }
+  ]
+ },
+ "presets_feed": {
+  "gate": 0.26785714285714285,
+  "sketch": 0.08928571428571429,
+  "dense": 0.25
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "run": "ablate",
+ "systems": [
+  "sketchrag_gate"
+ ],
+ "tasks": [
+  "narrativeqa",
+  "qasper",
+  "multifieldqa_en",
+  "hotpotqa",
+  "2wikimqa",
+  "musique",
+  "gov_report",
+  "qmsum",
+  "passage_retrieval_en",
+  "passkey",
+  "kv_retrieval"
+ ],
+ "n": 10,
+ "seed": 0,
+ "model": "qwen2.5:7b-instruct",
+ "num_ctx": 32768,
+ "set": [
+  "ret.confidence=noise"
+ ],
+ "chunk_words": 150,
+ "workers": 4
+}

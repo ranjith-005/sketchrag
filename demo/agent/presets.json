@@ -1,0 +1,67 @@
+{
+ "max_cells": 256,
+ "n_questions": 56,
+ "end_of_feed_recall": {
+  "gate": 0.26785714285714285,
+  "sketch": 0.08928571428571429,
+  "dense": 0.25
+ },
+ "robust": 12,
+ "presets": [
+  {
+   "id": "2wikimqa/78436f55ae9c254da5a54558ddd196c94850ba7a2b6fa637",
+   "question": "Where was the father of Teobaldo Ii Ordelaffi born?",
+   "answers": [
+    "Italy"
+   ],
+   "kind": "qa",
+   "doc": "3f50dda693d74fd6",
+   "doc_kind": "Wiki pages",
+   "doc_icon": "\ud83c\udf10",
+   "doc_title": "Obata Toramori (\u5c0f\u7560\u864e\u76db, 1491 \u2013 July 14, 1561) was\u2026",
+   "available_at": 2118,
+   "gate_fired": true,
+   "digest_only_has_answer": true,
+   "dense_has_answer": false,
+   "rehearsal": {
+    "model": "llama3.2:3b",
+    "pred": "Italy",
+    "score": 1.0,
+    "f1": 1.0,
+    "em": 1.0,
+    "seconds": 44.1
+   }
+  },
+  {
+   "id": "qasper/a65a814bec0bd2085660d75fc5eeb39935a7cea44abab2b1",
+   "question": "Are the automatically constructed datasets subject to quality control?",
+   "answers": [
+    "No",
+    "No"
+   ],
+   "kind": "qa",
+   "doc": "4f9bd92696131a67",
+   "doc_kind": "Paper",
+   "doc_icon": "\ud83d\udcc4",
+   "doc_title": "Automatically answering questions, especially in the open-domain setting (i.e.,\u2026",
+   "available_at": 2372,
+   "gate_fired": true,
+   "digest_only_has_answer": false,
+   "dense_has_answer": true,
+   "rehearsal": {
+    "model": "llama3.2:3b",
+    "pred": "No",
+    "score": 1.0,
+    "f1": 1.0,
+    "em": 1.0,
+    "seconds": 36.8
+   }
+  }
+ ],
+ "removed": [
+  {
+   "question": "After Russell D. Moore ... in what year?",
+   "reason": "three-point rehearsal: correct at end of feed (2013), wrong right after arrival (2001)"
+  }
+ ]
+}

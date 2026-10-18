@@ -1,0 +1,42 @@
+{
+    "multifieldqa_en": {
+        "score": 50.86,
+        "len_predictions": 20,
+        "ppl_mean": 7.237192547321319,
+        "ppl_std": 3.5695182427863283,
+        "block_sizes_mean": 22.828465928163812,
+        "block_sizes_std": 8.782140817847822
+    },
+    "2wikimqa": {
+        "score": 27.68,
+        "len_predictions": 20,
+        "ppl_mean": 6.553094458580017,
+        "ppl_std": 1.2121394276800102,
+        "block_sizes_mean": 22.301930614022353,
+        "block_sizes_std": 7.824130006150688
+    },
+    "narrativeqa": {
+        "score": 0.0,
+        "len_predictions": 1,
+        "ppl_mean": 4.667059898376465,
+        "ppl_std": 0.0,
+        "block_sizes_mean": 23.395098625224147,
+        "block_sizes_std": 8.658488325851014
+    },
+    "musique": {
+        "score": 37.51,
+        "len_predictions": 20,
+        "ppl_mean": 6.0143417596817015,
+        "ppl_std": 0.884923246385376,
+        "block_sizes_mean": 22.445425784339573,
+        "block_sizes_std": 8.139138260002623
+    },
+    "hotpotqa": {
+        "score": 32.86,
+        "len_predictions": 20,
+        "ppl_mean": 6.45442898273468,
+        "ppl_std": 0.9820083491242572,
+        "block_sizes_mean": 22.238462137131293,
+        "block_sizes_std": 7.652246733437735
+    }
+}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Matched comparison with EM-LLM's official code: same base model (Phi-3.5-mini) and the same 120 questions on the 6 LongBench tasks EM-LLM completed.}
+\label{tab:emllm}
+\setlength{\tabcolsep}{2.6pt}
+\footnotesize
+\begin{tabular}{lrrrrrrr}
+\toprule
+System & Qasp & MFQA & HQA & 2WQA & MuSQ & PRet & Avg \\
+\midrule
+Full context & 39.7 & 41.6 & 38.3 & 35.0 & 11.5 & 60.0 & 37.7 \\
+SketchRAG-raw & 34.1 & 40.3 & 56.4 & 18.6 & 24.5 & 43.5 & 36.2 \\
+SketchRAG-gate & 40.3 & 47.4 & 47.3 & 16.2 & 20.0 & 37.5 & 34.8 \\
+BM25 RAG & 31.4 & 55.0 & 42.4 & 12.1 & 26.7 & 40.0 & 34.6 \\
+EM-LLM (official) & 43.2 & 50.9 & 32.9 & 27.7 & 37.5 & 15.0 & 34.5 \\
+Dense RAG & 37.5 & 45.0 & 46.3 & 29.8 & 27.7 & 17.5 & 34.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

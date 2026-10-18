@@ -1,0 +1,121 @@
+{
+ "quality": {
+  "bm25_rag": {
+   "narrativeqa": 16.246031746031747,
+   "qasper": 31.372304166421817,
+   "multifieldqa_en": 54.961807928913196,
+   "hotpotqa": 42.388888888888886,
+   "2wikimqa": 12.12639630751086,
+   "musique": 26.742424242424246,
+   "passage_retrieval_en": 40.0,
+   "passkey": 100.0,
+   "kv_retrieval": 90.0,
+   "avg": 45.981983697798974
+  },
+  "dense_rag": {
+   "narrativeqa": 18.754329004329005,
+   "qasper": 37.49959792529452,
+   "multifieldqa_en": 45.04012430451049,
+   "hotpotqa": 46.34366925064599,
+   "2wikimqa": 29.843653250773993,
+   "musique": 27.68965517241379,
+   "passage_retrieval_en": 17.5,
+   "passkey": 100.0,
+   "kv_retrieval": 10.0,
+   "avg": 36.96344765644087
+  },
+  "full_context": {
+   "narrativeqa": 22.397642390289445,
+   "qasper": 39.66241900800724,
+   "multifieldqa_en": 41.63906926406926,
+   "hotpotqa": 38.333333333333336,
+   "2wikimqa": 35.02651515151515,
+   "musique": 11.523809523809526,
+   "passage_retrieval_en": 60.0,
+   "passkey": 20.0,
+   "kv_retrieval": 10.0,
+   "avg": 30.953643185669325
+  },
+  "sketchrag_gate": {
+   "narrativeqa": 19.1461038961039,
+   "qasper": 40.316532039639874,
+   "multifieldqa_en": 47.425732892838155,
+   "hotpotqa": 47.333333333333336,
+   "2wikimqa": 16.19327731092437,
+   "musique": 20.047619047619047,
+   "passage_retrieval_en": 37.5,
+   "passkey": 100.0,
+   "kv_retrieval": 90.0,
+   "avg": 46.44028872449541
+  },
+  "sketchrag_raw": {
+   "narrativeqa": 25.330659536541887,
+   "qasper": 34.11229498470878,
+   "multifieldqa_en": 40.30452470645969,
+   "hotpotqa": 56.42857142857143,
+   "2wikimqa": 18.551435581923386,
+   "musique": 24.53968253968254,
+   "passage_retrieval_en": 43.49999999999999,
+   "passkey": 100.0,
+   "kv_retrieval": 90.0,
+   "avg": 48.08524097532086
+  }
+ },
+ "efficiency": {
+  "bm25_rag": {
+   "context_tokens": 1438.1,
+   "output_tokens": 16.1875,
+   "llm_calls": 1.0,
+   "llm_s": 12.766675645518513,
+   "hot_bytes": 150.98584594726563,
+   "ingest_ms_per_chunk": NaN,
+   "retrieve_s": 1.9578275251205925,
+   "fallback": 0.0,
+   "answer_recall": 0.58125
+  },
+  "dense_rag": {
+   "context_tokens": 1457.19375,
+   "output_tokens": 15.41875,
+   "llm_calls": 1.0,
+   "llm_s": 15.044008557562416,
+   "hot_bytes": 258.1010803222656,
+   "ingest_ms_per_chunk": NaN,
+   "retrieve_s": 0.33446494996951515,
+   "fallback": 0.0,
+   "answer_recall": 0.51875
+  },
+  "full_context": {
+   "context_tokens": 13698.9,
+   "output_tokens": 10.16875,
+   "llm_calls": 1.0,
+   "llm_s": 104.63791298989386,
+   "hot_bytes": 87.56158447265625,
+   "ingest_ms_per_chunk": NaN,
+   "retrieve_s": NaN,
+   "fallback": 0.0,
+   "answer_recall": 0.66875
+  },
+  "sketchrag_gate": {
+   "context_tokens": 1343.3625,
+   "output_tokens": 14.75,
+   "llm_calls": 1.0,
+   "llm_s": 11.309797539356305,
+   "hot_bytes": 466.1052734375,
+   "ingest_ms_per_chunk": 14.071094132618205,
+   "retrieve_s": 16.192137724897293,
+   "fallback": 0.48125,
+   "answer_recall": 0.525
+  },
+  "sketchrag_raw": {
+   "context_tokens": 1724.425,
+   "output_tokens": 15.05,
+   "llm_calls": 1.0,
+   "llm_s": 13.521806268693672,
+   "hot_bytes": 466.1052734375,
+   "ingest_ms_per_chunk": 13.36302591356085,
+   "retrieve_s": 18.37665261246002,
+   "fallback": 1.0,
+   "answer_recall": 0.58125
+  }
+ }
+}

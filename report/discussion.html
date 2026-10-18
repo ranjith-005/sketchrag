@@ -1,0 +1,89 @@
+<p><b>RQ1: Can approximate streaming summaries preserve enough information for accurate RAG?</b>
+<i>Partly, and the gate is what makes the difference.</i>
+<ul>
+<li><b>Summary alone.</b> The digest-only <i>sketch</i> policy scores 29.9. It loses most on questions that need
+an exact string: KV retrieval 6.7, Qasper 24.1.</li>
+<li><b>With the gate.</b> Escalating only the cells whose sketch cannot vouch for the query terms raises the score
+to 41.7. Always escalating (<i>raw</i>) gives 42.5.</li>
+<li><b>Global questions.</b> The summary is sufficient on its own here: GovReport has no rare query terms, the
+gate never fires, and all policies score alike (11.7&ndash;13.2).</li>
+</ul>
+So extractive streaming summaries preserve topical content, but exact facts still need the raw text that
+the sketch points to.</p>
+
+<p><b>RQ2: How does SketchRAG compare with episodic-memory, adaptive-memory and compression approaches?</b>
+<ul>
+<li><b>Against SARA-lite, AMBER-lite and full context.</b> With the shared 7B model, SketchRAG&middot;gate (41.7)
+beats SARA-lite (38.2), full context (38.1) and AMBER-lite (32.0). It sends the LLM about half the tokens
+of SARA-lite and AMBER-lite, with one LLM call per question against AMBER-lite's three.</li>
+<li><b>Where it trails.</b> SARA-lite and full context are clearly better on multi-hop QA (2WikiMQA 51.9 / 58.7
+vs 33.3), where evidence is spread over more chunks than the top-4 cells hold.</li>
+<li><b>AMBER-lite.</b> It suffers on PassageRetrieval (0.0) because its memory notes drop the paragraph labels
+the answer must name. That is a weakness of our re-implementation, not necessarily of AMBER.</li>
+<li><b>BM25 RAG.</b> A plain BM25 baseline is the best system overall (46.0), mainly through exact-match tasks
+(PassageRetrieval 70.0). That shows how much these benchmarks reward lexical matching.</li>
+<li><b>Against EM-LLM.</b> With Phi-3.5-mini as the shared model, SketchRAG&middot;gate and EM-LLM's official code
+score within a point of each other on the six tasks EM-LLM completed (Section 4.6). SketchRAG needs one 7B
+generation per question instead of streaming the whole document through the model. EM-LLM ran in fp16; our
+Phi-3.5 is Ollama's quantized build, so this is a like-for-like question set, not a like-for-like model.</li>
+</ul></p>
+
+<p><b>RQ3: How does reducing memory size affect retrieval accuracy and downstream reasoning?</b>
+<ul>
+<li><b>Per document.</b> Fewer cells mean coarser digests and more fallbacks (Section 4.4, 110 test questions).
+Going from 256 to 8 cells cuts hot memory from 519 to 183 KB. Sketch-only answer recall drops from 0.37 to
+0.28, and the gate compensates by escalating more often (fallback 0.45 &rarr; 0.77). The gated score stays
+between 40.3 and 45.5 at every budget, with no monotone trend.</li>
+<li><b>Noise between runs.</b> Re-running the frozen configuration gives 42.4 and 43.3 on the same 110 questions
+(42.5 in the main run), so differences of about 2 points in the sweeps are within run-to-run noise.</li>
+<li><b>Count-Min width.</b> A narrower sketch has a looser &epsilon;N bound, so the gate trusts fewer cells:
+fallback rises from 0.51 (width 512) to 0.75 (width 64), while the score stays within noise (40.0&ndash;43.3).
+Width 2048 more than doubles hot memory (1,047 vs 426 KB) without lowering the fallback rate.</li>
+<li><b>Hot memory at document scale.</b> A single LongBench document is small enough that 64 cells with
+exemplars take about as much space as a dense index (454 vs 447 KB). The bounded memory only pays off on
+long streams.</li>
+<li><b>Hot memory at stream scale.</b> On the 8.5M-word stream the hot memory stays at 1.0 MB (64 cells) or
+3.7 MB (256 cells), against 146 MB for dense RAG. Recall falls to 0.29 / 0.23 against 0.44 for dense RAG.</li>
+<li><b>Behaviour at scale.</b> Every probe falls back (fallback rate 1.0), so SketchRAG behaves like a two-level
+IVF-style router over cold storage. The cell centroid is too blunt a key once thousands of unrelated
+documents share 64&ndash;256 cells.</li>
+</ul></p>
+
+<p><b>RQ4: Can an agent decide when the summary is sufficient and when raw evidence is needed?</b>
+<i>Yes when the decision is driven by the sketch's error bound; no when it is left to a 7B LLM.</i>
+<ul>
+<li><b>The deterministic gate</b> escalates 54% of questions.
+  <ul>
+  <li>On those, raw evidence lifts the score from 30.0 (digest only) to 51.5.</li>
+  <li>On the 46% it trusts, always reading raw would have added only 0.8 points (31.4 &rarr; 32.2).</li>
+  <li>It fires on 100% of KV and 93% of PassKey questions, where digests drop exact keys. It never fires on
+  GovReport.</li>
+  <li>Net effect: it recovers 94% of the always-raw gain while sending 22% fewer context tokens than always-raw
+  (1,213 vs 1,549).</li>
+  </ul></li>
+<li><b>The LLM-driven agent</b> called a tool on only 30 of 350 questions, most of them KV.
+  <ul>
+  <li>It stays near the digest-only score (30.1).</li>
+  <li>Hybrid (gate plus tools) adds tokens and scores below the gate alone (38.3), most likely because the extra tool output
+  distracts the 7B model.</li>
+  </ul></li>
+</ul>
+The calibrated signal therefore comes from the Count-Min bound, not from the LLM's self-assessment.</p>
+
+<p><b>RQ5: What is the best trade-off between memory, compression, latency and accuracy?</b>
+<ul>
+<li><b>Accuracy versus context cost.</b> SketchRAG&middot;gate is on the Pareto front (Figure, Section 4.2): the
+cheapest context of any system (1,213 tokens, 5.8 s of LLM time per question) for the third-best score.</li>
+<li><b>Full context</b> costs 11.7&times; more tokens and 10.6&times; more LLM time for a lower score. It also
+fails PassKey (16.7) because middle truncation removes the needle.</li>
+<li><b>Ingest cost.</b> Ingest takes about 20&ndash;26 ms per chunk inside a single document, including the
+digest and exemplar updates, and 2&ndash;5 ms per chunk on the long stream.</li>
+<li><b>Recommended setting.</b> The frozen configuration (64 cells, CMS width 512, gate with two raw chunks per
+escalated cell) is the best balance we found. More cells cost hot memory without improving test recall at
+stream scale. On single documents, 8&ndash;32 cells cost no accuracy and use 40&ndash;60% less hot memory, but
+they send the agent to cold storage more often.</li>
+<li><b>What must not be cut.</b> The ablations (Section 4.3) show that the raw pointers matter most. Capping
+each cell at a 16-pointer reservoir drops the gated score from 42.5 to 28.9, the digest-only level, because
+the raw chunk holding the answer is often no longer reachable. Removing temporal contiguity costs 1.8 points.
+The other variants are within noise.</li>
+</ul></p>

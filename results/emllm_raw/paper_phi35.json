@@ -1,0 +1,7 @@
+{
+ "source": "github.com/em-llm/EM-LLM-model benchmark/further_results.md, row 'Phi 3.5 / EM-LLM' (full LongBench, category averages)",
+ "categories": {"SQA": 31.8, "MQA": 31.9, "Sum": 24.5, "FSL": 55.5, "Ret": 13.0, "Cod": 39.5, "Avg": 34.9},
+ "category_tasks": {"SQA": ["narrativeqa", "qasper", "multifieldqa_en"], "MQA": ["hotpotqa", "2wikimqa", "musique"],
+                    "Ret": ["passage_retrieval_en"]},
+ "note": "LongBench's Ret category also includes passage_count (not run here); our subset is 20 questions per task"
+}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Hot-memory accounting, measured on a 194-chunk NarrativeQA stream with $K{=}64$ cells (total 762~KB). Cold storage is not included.}
+\label{tab:memory}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrl}
+\toprule
+Component & Bytes & Scope \\
+\midrule
+Centroid sum (384 $\times$ fp32) & 1{,}536 & per cell \\
+Count-Min Sketch ($3\times512$ int32) & 6{,}144 & per cell \\
+Exemplars ($\le$8 $\times$ 384 fp16; mean here) & 2{,}244 & per cell \\
+Extractive digest ($\le$120 words; mean) & 669 & per cell \\
+Document-frequency CMS ($3\times8192$) & 98{,}304 & global \\
+Misra--Gries table ($k{=}256$) & 2{,}492 & global \\
+\bottomrule
+\end{tabular}
+\end{table}

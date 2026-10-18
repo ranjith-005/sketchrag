@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Efficiency per question (means over 350 questions). Tok = LLM context tokens; Rec = answer recall of the context (gold string present); Fb = gate fallback rate.}
+\label{tab:eff}
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+System & Tok & Calls & LLM s & Rec & Fb \\
+\midrule
+Full context & 14{,}232 & 1.00 & 61.5 & 0.51 & 0.00 \\
+BM25 RAG & 1{,}327 & 1.00 & 8.1 & 0.49 & 0.00 \\
+Dense RAG & 1{,}361 & 1.00 & 6.9 & 0.41 & 0.00 \\
+SARA-lite & 2{,}435 & 1.00 & 12.9 & 0.45 & 0.00 \\
+AMBER-lite & 2{,}223 & 2.97 & 31.8 & 0.33 & 0.00 \\
+SketchRAG-sketch & 1{,}284 & 1.00 & 6.1 & 0.35 & 0.00 \\
+SketchRAG-raw & 1{,}549 & 1.00 & 7.6 & 0.50 & 1.00 \\
+SketchRAG-gate & 1{,}213 & 1.00 & 5.8 & 0.46 & 0.54 \\
+SketchRAG-agent & 2{,}727 & 1.16 & 9.4 & 0.40 & 0.06 \\
+SketchRAG-hybrid & 1{,}553 & 1.02 & 6.3 & 0.46 & 0.55 \\
+\bottomrule
+\end{tabular}
+\end{table}

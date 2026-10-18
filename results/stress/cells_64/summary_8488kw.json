@@ -1,0 +1,30 @@
+{
+ "n_chunks": 65127,
+ "n_words": 8488204,
+ "embed_s_total": 1.3988346001133323,
+ "bm25_build_s": 4.078059199964628,
+ "final": {
+  "chunks": 65127,
+  "words": 8488204,
+  "sketch_hot_bytes": 1056511,
+  "sketch_cells": 64,
+  "dense_bytes": 152975229,
+  "text_bytes": 52940157,
+  "ingest_ms_per_chunk": 2.3307872896244803
+ },
+ "config": [
+  "mem.max_cells=64"
+ ],
+ "probes": 100,
+ "recall_dense_rag": 0.44,
+ "ctx_words_dense_rag": 659.1,
+ "recall_bm25_rag": 0.38,
+ "ctx_words_bm25_rag": 660.65,
+ "recall_sketchrag_sketch": 0.03,
+ "ctx_words_sketchrag_sketch": 664.24,
+ "recall_sketchrag_gate": 0.29,
+ "ctx_words_sketchrag_gate": 1276.8,
+ "recall_sketchrag_raw": 0.31,
+ "ctx_words_sketchrag_raw": 1440.42,
+ "gate_fallback_rate": 1.0
+}

@@ -1,0 +1,14 @@
+{
+ "changes": [
+  "model weights loaded in float16 instead of torch_dtype=auto (bfloat16): T4 has no bf16 support",
+  "min_free_cpu_memory 100 -> 4 (GB): Kaggle VM has ~29 GB RAM",
+  "min_block_size 8 -> 16 and max_cached_block 384 -> 200 (n_mem=3072 kept): the per-layer GPU block cache (max_cached_block x 64 tokens x 32 heads) needed 9.6 GB and ran out of memory next to the weights on a 15 GB T4",
+  "one job with the model split over both T4s (the repo's use_hf_acc path) instead of one job per GPU; weights pre-downloaded to a local folder because that path needs one",
+  "data: fixed-seed subset (20 per LongBench task, 10 per InfiniteBench task) matching the SketchRAG test split"
+ ],
+ "worker_exit_codes": [
+  -9
+ ],
+ "n_gpu": 2,
+ "gpu": "Tesla T4\nTesla T4"
+}

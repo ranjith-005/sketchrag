@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #0B1120; }
+body { font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+::selection { background: rgba(45, 212, 191, 0.3); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #233248; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+mark { background: rgba(251, 191, 36, 0.22); color: #FFC857; border-radius: 3px; padding: 0 2px; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.35s ease-out; }
+@keyframes blink { 50% { opacity: 0; } }
+.caret { display: inline-block; width: 8px; height: 17px; margin-left: 2px; vertical-align: -3px; background: #2DD4BF; animation: blink 0.9s infinite; }
+@keyframes cellpop { from { transform: scale(0.3); opacity: 0; } to { transform: none; opacity: 1; } }
+.cellpop { animation: cellpop 0.35s ease-out; }

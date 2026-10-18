@@ -1,0 +1,92 @@
+[
+ {
+  "chunks": 6512,
+  "words": 840659,
+  "sketch_hot_bytes": 3770056,
+  "sketch_cells": 256,
+  "dense_bytes": 15327050,
+  "text_bytes": 5324618,
+  "ingest_ms_per_chunk": 3.269872957241967
+ },
+ {
+  "chunks": 13025,
+  "words": 1682617,
+  "sketch_hot_bytes": 3839156,
+  "sketch_cells": 256,
+  "dense_bytes": 30654228,
+  "text_bytes": 10647828,
+  "ingest_ms_per_chunk": 3.50864753131567
+ },
+ {
+  "chunks": 19538,
+  "words": 2532679,
+  "sketch_hot_bytes": 3858055,
+  "sketch_cells": 256,
+  "dense_bytes": 45904504,
+  "text_bytes": 15894136,
+  "ingest_ms_per_chunk": 3.6223748537411447
+ },
+ {
+  "chunks": 26050,
+  "words": 3382404,
+  "sketch_hot_bytes": 3869972,
+  "sketch_cells": 256,
+  "dense_bytes": 61221532,
+  "text_bytes": 21208732,
+  "ingest_ms_per_chunk": 3.9565231781940007
+ },
+ {
+  "chunks": 32563,
+  "words": 4234744,
+  "sketch_hot_bytes": 3876292,
+  "sketch_cells": 256,
+  "dense_bytes": 76529510,
+  "text_bytes": 26512742,
+  "ingest_ms_per_chunk": 4.33542095908665
+ },
+ {
+  "chunks": 39076,
+  "words": 5084452,
+  "sketch_hot_bytes": 3879953,
+  "sketch_cells": 256,
+  "dense_bytes": 91813655,
+  "text_bytes": 31792919,
+  "ingest_ms_per_chunk": 4.361417514327519
+ },
+ {
+  "chunks": 45588,
+  "words": 5931383,
+  "sketch_hot_bytes": 3883535,
+  "sketch_cells": 256,
+  "dense_bytes": 107102289,
+  "text_bytes": 37079121,
+  "ingest_ms_per_chunk": 4.372169450048508
+ },
+ {
+  "chunks": 52101,
+  "words": 6787000,
+  "sketch_hot_bytes": 3884847,
+  "sketch_cells": 256,
+  "dense_bytes": 122387540,
+  "text_bytes": 42360404,
+  "ingest_ms_per_chunk": 4.393206938235704
+ },
+ {
+  "chunks": 58614,
+  "words": 7638443,
+  "sketch_hot_bytes": 3889365,
+  "sketch_cells": 256,
+  "dense_bytes": 137668444,
+  "text_bytes": 47637340,
+  "ingest_ms_per_chunk": 4.441372794680692
+ },
+ {
+  "chunks": 65127,
+  "words": 8488204,
+  "sketch_hot_bytes": 3888826,
+  "sketch_cells": 256,
+  "dense_bytes": 152975229,
+  "text_bytes": 52940157,
+  "ingest_ms_per_chunk": 4.469711601737544
+ }
+]

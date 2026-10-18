@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Real answers from the main run (qwen2.5:7b). The gate's escalation reason is shown per question. The last row is a failure: the gate escalated, but the evidence was not in the retrieved cells.}
+\label{tab:cases}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{l p{4.0cm} l l l l l}
+\toprule
+Task & Question (abridged) & Gold & Digest only & SketchRAG-gate & Full context & Gate \\
+\midrule
+NQA & Who did Baron Conrad kill? &Baron Frederick & not enough informa\ldots & Baron Frederick & Baron Henry & unresolved \\
+KV & Value for key 35b9fdc1-c2c2-\ldots? &e2e6376e-5c57-4\ldots & 14f1 & e2e6376e-5c57-4b42\ldots & b7000000-202d-4b0b\ldots & unresolved \\
+MuSQ & What is the place of birth of who does the voice of stan on the series that Insecurity is\ldots &Denver & Malcolm McDowell & Denver & Trey Parker & lossy \\
+2WQA & Who is younger, Peter Rosegger or Ruel Redinger? &Ruel Redinger & Peter Rosegger & Peter Rosegger & Ruel Redinger & unresolved \\
+\bottomrule
+\end{tabular}
+\end{table*}

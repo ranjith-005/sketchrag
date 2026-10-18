@@ -1,0 +1,14 @@
+<p>Agents that read continuous streams cannot afford to keep and search every chunk forever. <b>SketchRAG</b>
+maintains a bounded, query-independent summary of the stream: semantic cells with extractive digests,
+per-cell Count-Min Sketches, Misra-Gries heavy hitters and streaming IDF, all updated in a single pass.
+It uses this summary as the retrieval layer. The Count-Min error bound, checked against each digest, gates when the agent
+must read raw evidence from cold storage. On 350 LongBench / &infin;-Bench questions answered by
+<code>qwen2.5:7b-instruct</code> through Ollama, the gated configuration scores <b>41.7</b>. That beats full
+context (38.1), dense RAG (35.8), SARA-lite (38.2) and AMBER-lite (32.0), while using the fewest LLM context
+tokens of any system (1,213 per question, 8.5% of full context). BM25 RAG remains the strongest system (46.0).
+The gate is well calibrated: on the 54% of questions it escalates, raw evidence lifts the score from 30.0
+(digest only) to 51.5. On the questions it trusts, always reading raw evidence would add only 0.8 points.
+On &infin;-Bench KV retrieval the gate turns 6.7 (digest only) into 96.7. With Phi-3.5-mini as the shared model,
+SketchRAG matches the official EM-LLM reproduction on the six LongBench tasks EM-LLM could complete on Kaggle T4s.
+On an 8.5M-word stream, the searchable memory stays at 1&ndash;4 MB against a 146 MB dense index. At that scale,
+recall drops (0.29 vs 0.44), which is the main limitation we report.</p>

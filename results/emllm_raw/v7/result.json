@@ -1,0 +1,18 @@
+{
+    "qasper": {
+        "score": 43.25,
+        "len_predictions": 20,
+        "ppl_mean": 6.738597774505616,
+        "ppl_std": 0.8324888538302297,
+        "block_sizes_mean": 22.5984598459846,
+        "block_sizes_std": 8.01795549932785
+    },
+    "passage_retrieval_en": {
+        "score": 15.0,
+        "len_predictions": 20,
+        "ppl_mean": 8.82382230758667,
+        "ppl_std": 0.5636034757863256,
+        "block_sizes_mean": 21.998399359743896,
+        "block_sizes_std": 7.530011810755919
+    }
+}
