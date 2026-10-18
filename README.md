@@ -2,8 +2,8 @@
 
 **Approximate streaming summaries as retrieval context for agentic LLMs.**
 
-Course project, IIIT Kottayam. Team: R Ranjith Kumar (2023BCD0030), Bhuvan S M (2023BCS0198),
-Nooh K (2023BCD0003), Hariprashanth M (2023BCS0036).
+Mini project, IIIT Kottayam, **Group 6**. Team: R Ranjith Kumar (2023BCD0030, team lead), Bhuvan S M (2023BCS0198),
+Hariprashanth M (2023BCS0036), Nooh K (2023BCD0003).
 
 A document (or an unbounded stream) arrives as chunks. Instead of keeping every chunk in an index,
 SketchRAG keeps a **bounded hot memory** and updates it online:
@@ -76,7 +76,7 @@ Requires Python 3.10+ and, for live answers, [Ollama](https://ollama.com).
 git clone https://github.com/ranjith-005/sketchrag.git
 cd sketchrag
 pip install -e .            # numpy, torch, transformers, faiss-cpu, rank_bm25, matplotlib
-pip install pytest streamlit
+pip install fastapi uvicorn pytest streamlit jupyter
 ollama pull llama3.2:3b     # small model for the live demo (CPU-friendly)
 ollama pull qwen2.5:7b-instruct   # model used for the reported results
 ```
@@ -134,6 +134,46 @@ python demo/make_notebook.py                                # regenerate the not
 
 The dashboard and notebook use `demo/demo_core.py`, which calls the package code and the saved
 qwen2.5:7b answers in `results/runs/main`. They need no LLM, except for the optional live answer.
+
+## Complete pipeline
+
+1. **Data**: fixed-seed subsamples of 9 LongBench and 3 InfiniteBench tasks (`src/sketchrag/data/loaders.py`);
+   test split seed 0 (frozen in `data_raw/examples/`), dev split seed 1000 for tuning.
+2. **Embeddings**: `bge-small-en-v1.5` chunk embeddings, precomputed on a Kaggle GPU (`kaggle/embed_cache`).
+3. **Ingest**: each document is streamed chunk by chunk into `SketchMemory` (cells, Count-Min, Misra-Gries,
+   digests), with raw chunks written to `ColdStore`.
+4. **Retrieve**: cell ranking, error-bound gate and raw fetch build the LLM context (`retrieve.py`).
+5. **Answer**: Ollama generates the answer, `qwen2.5:7b-instruct` for the reported runs
+   (`kaggle/ollama_runs`, `scripts/run_system.py`); per-question records go to `results/runs/<run>/*.jsonl`.
+6. **Score and report**: `scripts/make_tables.py` and `scripts/make_figs.py` compute the tables and figures;
+   `report/paper/make_assets.py` writes them into the LaTeX paper.
+7. **Baseline comparison**: EM-LLM reproduced from its official repo on Kaggle (`kaggle/emllm_repro`) and
+   matched against SketchRAG on the same questions (`results/runs/emllm_match`).
+8. **Demo**: `demo/agent/server.py` runs the same package code live on a 400k-word stream, shown in the
+   React console.
+
+## Tools and versions
+
+| Tool | Version | Used for |
+|---|---|---|
+| Python | 3.12.10 | everything (EM-LLM reproduction: Python 3.11 venv via `uv` on Kaggle) |
+| PyTorch | 2.14.0 (CPU locally, CUDA on Kaggle) | embeddings, EM-LLM |
+| Transformers | 5.19.0 | embedding model |
+| faiss-cpu | 1.15.1 | dense retrieval baseline |
+| rank_bm25 | 0.2.2 | BM25 baseline |
+| NumPy | 2.5.1 | sketches, clustering |
+| Matplotlib | 3.11.0 | figures |
+| pytest | 9.1.1 | unit tests |
+| FastAPI / Uvicorn | 0.139.0 / 0.51.0 | demo backend |
+| Streamlit | 1.66.0 | demo dashboard |
+| Ollama | 0.40.5 (local) | LLM serving |
+| LLMs | `qwen2.5:7b-instruct` (results), `llama3.2:3b` (live demo), `Phi-3.5-mini-instruct` (EM-LLM) | answering |
+| Embedding model | `BAAI/bge-small-en-v1.5` | chunk and query embeddings |
+| Node.js | 24.19.0 | demo console and slide build |
+| React / Vite / Tailwind CSS / Recharts | 18.3.1 / 5.4.10 / 3.4.14 / 2.13.3 | demo console |
+| pptxgenjs | 3.12.0 | slide deck |
+| MiKTeX (pdfTeX) | 25.12 (4.23), `IEEEtran` class | report |
+| Kaggle | 2 × Tesla T4 GPU notebooks | bulk embedding, LLM runs, EM-LLM |
 
 ## Report
 
